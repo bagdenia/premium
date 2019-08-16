@@ -5,7 +5,7 @@ namespace :triggers_apply do
     Rake::Task['triggers_apply:prevent_movement_delete'].invoke
   end
 
-  desc "Create function that prevents deleting records"
+  desc 'Create function that prevents deleting records'
   task create_prevent_records_delete_function: :environment do
     query_text = <<~TRIGGER
       CREATE OR REPLACE FUNCTION prevent_records_delete() RETURNS trigger
@@ -22,7 +22,7 @@ namespace :triggers_apply do
     ActiveRecord::Base.connection.execute(query_text)
   end
 
-  desc "Prevents deleting movements"
+  desc 'Prevents deleting movements'
   task prevent_movement_delete: :environment do
     query_text = <<~QUERY
       DROP TRIGGER IF EXISTS prevent_movement_delete ON movements;
