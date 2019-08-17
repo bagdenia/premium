@@ -9,7 +9,7 @@ class UserSerializer < ActiveModel::Serializer
         return balance
       end
 
-      result.failure do |error|
+      result.failure do |_error|
         :balance_error
       end
     end

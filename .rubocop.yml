@@ -8,3 +8,9 @@ Lint/NonLocalExitFromIterator:
 
 Metrics/BlockLength:
   Enabled: false
+
+Lint/UnderscorePrefixedVariableName:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
