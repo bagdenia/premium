@@ -10,24 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_190_816_195_711) do
+ActiveRecord::Schema.define(version: 2019_08_16_233737) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'movements', force: :cascade do |t|
-    t.integer 'amount'
-    t.datetime 'datetime'
-    t.bigint 'user_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['user_id'], name: 'index_movements_on_user_id'
+  create_table "balances", force: :cascade do |t|
+    t.bigint "movement_id"
+    t.bigint "user_id"
+    t.integer "balance", null: false
+    t.datetime "created_at", null: false
+    t.index ["movement_id"], name: "index_balances_on_movement_id"
+    t.index ["user_id"], name: "index_balances_on_user_id"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "movements", force: :cascade do |t|
+    t.integer "amount"
+    t.datetime "datetime"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_movements_on_user_id"
   end
 
-  add_foreign_key 'movements', 'users'
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "balances", "movements"
+  add_foreign_key "balances", "users"
+  add_foreign_key "movements", "users"
 end
