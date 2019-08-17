@@ -5,7 +5,7 @@ class Movement < ApplicationRecord
 
   validates_with Movement::BalanceValidator
 
-  # менять уже созданные движения запрещаем
+  # not allowed to update entries
   def readonly?
     new_record? ? false : true
   end

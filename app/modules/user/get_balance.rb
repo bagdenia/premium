@@ -26,8 +26,8 @@ class User
 
     def fetch_new_movements(user:, balance:, **args)
       new_movements = Movement.order(id: :asc)
-                                    .where(user: user)
-                                    .where('id > ?', (balance&.movement_id || -1))
+                              .where(user: user)
+                              .where('id > ?', (balance&.movement_id || -1))
 
       { user: user, balance: balance, new_movements: new_movements, **args }
     end

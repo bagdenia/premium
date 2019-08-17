@@ -1,1 +1,10 @@
 inherit_from: .rubocop_todo.yml
+
+Metrics/MethodLength:
+  Max: 20
+
+Lint/NonLocalExitFromIterator:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false

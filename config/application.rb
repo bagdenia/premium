@@ -6,6 +6,13 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# dry-rb
+require 'dry/matcher'
+require 'dry/matcher/result_matcher'
+require 'dry-monads'
+require 'dry/monads/all'
+require 'dry/transaction'
+
 module Premium
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

@@ -3,14 +3,17 @@ class Movement < ApplicationRecord
     def validate(record)
       return unless record.new_record?
 
-      User::GetBalance.new.call(user: record.user) do |result|
+      res = User::GetBalance.new.call(user: record.user)
+
+      Dry::Matcher::ResultMatcher.call(res) do |result|
         result.success do |balance|
-          return if record.amount >= balance
+          return if balance + record.amount >= 0
+
           record.errors.add(:base, 'Not enough balance')
         end
 
-        result.failure do |validation|
-          record.errors.add(:base, validation.to_s)
+        result.failure do |error|
+          record.errors.add(:base, error.to_s)
         end
       end
     end
