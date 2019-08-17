@@ -34,19 +34,8 @@ Style/BlockComments:
     - 'spec/spec_helper.rb'
 
 # Offense count: 9
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'app/helpers/application_helper.rb'
-    - 'app/mailers/application_mailer.rb'
-    - 'app/models/application_record.rb'
-    - 'app/models/movement.rb'
-    - 'app/models/user.rb'
-    - 'config/application.rb'
-    - 'db/migrate/20190816190456_create_users.rb'
-    - 'db/migrate/20190816194349_create_movements.rb'
-    - 'db/migrate/20190816195711_add_no_delete_movement_trigger.rb'
+Documentation:
+  Enabled: false
 
 # Offense count: 3
 # Cop supports --auto-correct.
