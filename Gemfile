@@ -38,6 +38,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'rubocop', require: false
 gem 'active_model_serializers'
+gem 'dry-matcher'
+gem 'dry-monads'
+gem 'dry-transaction'
+gem 'dry-validation'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
