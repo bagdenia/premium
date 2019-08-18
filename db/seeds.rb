@@ -5,8 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-return if User.any?
+pp 'rake db:seed started'
+if User.any?
+  pp 'rake db:seed done'
+  return
+end
 
 5.times do |i|
   u = User.create(name: "Vasya #{i}")
@@ -14,3 +17,5 @@ return if User.any?
     u.movements.create(user: u, datetime: Time.now, amount: rand(-100..100))
   end
 end
+
+pp 'rake db:seed done'
