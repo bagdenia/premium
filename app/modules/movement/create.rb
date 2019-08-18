@@ -22,7 +22,7 @@ class Movement
     def create_movement(user:, datetime:, amount:, **args)
       user.with_advisory_lock(user.lock_tag, timeout_seconds: TIMEOUT) do
         mov = user.movements.create!(datetime: datetime, amount: amount)
-        return Success(user: user, operation: mov, **args)
+        return Success(user: user, movement: mov, **args)
       end
       Failure(:user_temporarily_locked)
     end

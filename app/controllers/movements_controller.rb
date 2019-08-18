@@ -33,6 +33,7 @@ class MovementsController < ApplicationController
     @movement_params ||= begin
       attrs = params.require(:data).require(:attributes)
                     .permit(:amount, :datetime)
+
       { amount: attrs.require(:amount),
         datetime: attrs.require(:datetime) }
     end

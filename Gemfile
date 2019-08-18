@@ -43,6 +43,7 @@ gem 'dry-monads'
 gem 'dry-transaction'
 gem 'dry-validation'
 gem 'with_advisory_lock'
+gem 'rswag'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

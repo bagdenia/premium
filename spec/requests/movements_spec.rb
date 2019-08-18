@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Movements', type: :request do
   let(:user) { create :user }
 
-  describe 'GET /user/:id/movements' do
+  describe 'GET /users/:id/movements' do
     let!(:user_mvs) { create_list :movement, 3, user: user }
     let!(:other_user_mvs) { create_list :movement, 5 }
 
@@ -26,7 +26,7 @@ RSpec.describe 'Movements', type: :request do
     end
   end
 
-  describe 'POST /user/:id/movements' do
+  describe 'POST /users/:id/movements' do
     let(:amount) { 50 }
     let(:datetime) { Time.now }
 
