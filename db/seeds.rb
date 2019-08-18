@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+return if User.any?
+
 5.times do |i|
   u = User.create(name: "Vasya #{i}")
   5.times do |j|
