@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+5.times do |i|
+  u = User.create(name: "Vasya #{i}")
+  5.times do |j|
+    u.movements.create(user: u, datetime: Time.now, amount: rand(-100..100))
+  end
+end
