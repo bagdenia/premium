@@ -9,6 +9,10 @@ module Error
         rescue_from ActiveRecord::RecordNotFound do |e|
           respond(:record_not_found, 404, e.to_s)
         end
+
+        rescue_from ActionController::ParameterMissing do |e|
+          respond(:parameter_missing, 400, e.to_s)
+        end
       end
     end
 
