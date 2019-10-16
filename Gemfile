@@ -44,6 +44,7 @@ gem 'dry-transaction'
 gem 'dry-validation'
 gem 'with_advisory_lock'
 gem 'rswag'
+gem 'apitome'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,6 +53,7 @@ group :development, :test do
 
   gem 'factory_bot_rails'
   gem 'rspec-rails'
+  gem 'rspec_api_documentation'
 end
 
 group :development do

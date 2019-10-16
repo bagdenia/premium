@@ -1,0 +1,50 @@
+{
+  "resource": "Users",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/users/:id",
+  "description": "Get a user",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "id",
+      "description": "User ID"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/users/8",
+      "request_body": null,
+      "request_headers": {
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 8,\n  \"name\": \"Mr. Lemuel Rolfson\",\n  \"balance\": 0\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"ac04a6266e9e90cd1cc7f78f63a74324\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "778f4fbe-d783-4857-9d7d-5adaeb117702",
+        "X-Runtime": "0.026365",
+        "Content-Length": "48"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

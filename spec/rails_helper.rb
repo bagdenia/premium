@@ -60,3 +60,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
 end
+
+RspecApiDocumentation.configure do |config|
+  config.format = :json
+end
+
